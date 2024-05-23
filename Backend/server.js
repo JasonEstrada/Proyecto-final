@@ -1,21 +1,20 @@
+require('dotenv').config();
 const express = require('express');
-const cors = require("cors");
+const cors = require('cors');
 const mysql = require('mysql');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Configuración de la conexión a la base de datos MySQL
 const connection = mysql.createConnection({
-  host: '34.148.216.46',
-  user: 'admin',
-  password: 'admin',
-  database: 'Tienda',
-  multipleStatements: true // Habilitar múltiples consultas
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  multipleStatements: true
 });
 
-// Conexión a la base de datos
 connection.connect(err => {
   if (err) {
     console.error('Error al conectar a la base de datos:', err);
@@ -205,4 +204,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor Node.js en funcionamiento en el puerto ${PORT}`);
 });
-
