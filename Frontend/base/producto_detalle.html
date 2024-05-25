@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/producto_detalle.css">
+    <link rel="stylesheet" href="./css/banner.css">
+</head>
+<body>
+    <!-- Incluir el banner -->
+    <div id="banner-container"></div>
+
+    <div class="producto-detalle">
+        <div class="producto-detalle-imagen">
+            <img id="detalle-imagen" src="" alt="Producto">
+        </div>
+        <div class="producto-detalle-info">
+            <h1 id="detalle-nombre">Nombre del Producto</h1>
+            <p id="detalle-precio">$0.00</p>
+            <p id="detalle-descripcion">Descripción del producto.</p>
+            <div class="detalle-extra">
+                <p>Categoría: <span id="detalle-categoria">Categoría del Producto</span></p>
+                <p>Stock: <span id="detalle-stock">0</span></p>
+                <p>Proveedor: <span id="detalle-proveedor">Proveedor del Producto</span></p>
+            </div>
+            <button id="agregar-al-carrito">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <div class="producto-resenas">
+        <h2>Reseñas del Producto</h2>
+        <form id="resena-form">
+            <div class="resena-rating">
+                <label for="rating">Calificación:</label>
+                <div id="rating" class="rating">
+                    <span data-value="1">&#9733;</span>
+                    <span data-value="2">&#9733;</span>
+                    <span data-value="3">&#9733;</span>
+                    <span data-value="4">&#9733;</span>
+                    <span data-value="5">&#9733;</span>
+                </div>
+            </div>
+            <label for="comentario">Comentario:</label>
+            <div class="resena-comentario">
+                <textarea class="resena" id="comentario" required></textarea>
+            </div>
+            <button class="enviar-resena" type="submit">Enviar Reseña</button>
+        </form>
+        <div id="resenas-lista">
+            <!-- Aquí se mostrarán las reseñas -->
+        </div>
+    </div>
+
+    <script src="./js/producto_detalle.js"></script>
+    <script src="./js/banner.js"></script>
+</body>
+</html>

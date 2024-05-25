@@ -25,7 +25,7 @@ function cargarProductos(productosElegidos) {
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
-            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.nombre}">
+            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.nombre}" data-id="${producto.id_producto}">
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.nombre}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
@@ -33,9 +33,20 @@ function cargarProductos(productosElegidos) {
             </div>
         `;
         contenedorProductos.append(div);
-    })
+    });
 
     actualizarBotonesAgregar();
+    agregarEventosClickImagen();  // Añade esta línea
+}
+
+function agregarEventosClickImagen() {
+    const imagenes = document.querySelectorAll(".producto-imagen");
+    imagenes.forEach(imagen => {
+        imagen.addEventListener("click", (e) => {
+            const idProducto = e.currentTarget.getAttribute("data-id");
+            window.location.href = `producto_detalle.html?id=${idProducto}`;
+        });
+    });
 }
 
 botonesCategorias.forEach(boton => {
@@ -75,25 +86,15 @@ if (productosEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
-    Toastify({
-        text: "Producto agregado",
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(to right, #4b33a8, #785ce9)",
-            borderRadius: "2rem",
-            textTransform: "uppercase",
-            fontSize: ".75rem"
-        },
-        offset: {
-            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
-        },
-        onClick: function(){} // Callback after click
-    }).showToast();
+
+    // Mostrar el mensaje de "producto agregado"
+    const mensajeProductoAgregado = document.getElementById("producto-agregado");
+    mensajeProductoAgregado.style.display = "block";
+
+    // Ocultar el mensaje después de 3 segundos
+    setTimeout(() => {
+        mensajeProductoAgregado.style.display = "none";
+    }, 3000);
 
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id_producto == idBoton);

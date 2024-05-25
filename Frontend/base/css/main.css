@@ -75,8 +75,8 @@ aside {
 .boton-menu.active {
     background-color: var(--clr-white);
     color: var(--clr-main);
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
     position: relative;
 }
 
@@ -134,7 +134,7 @@ main {
     background-color: var(--clr-white);
     margin: 1rem;
     margin-left: 0;
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     padding: 3rem;
     width: calc(100% - 2rem); /* Ajustar para que ocupe todo el ancho disponible */
 }
@@ -142,6 +142,25 @@ main {
 .titulo-principal {
     color: var(--clr-main);
     margin-bottom: 2rem;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.producto-agregado {
+    color: var(--clr-white);
+    background-color: #3cb752;
+    padding: 5px;
+    border-radius: 0.5rem;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: .85rem;
 }
 
 .contenedor-productos {
@@ -440,6 +459,7 @@ main {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ececec;
 }
 
 .form-group {
@@ -501,18 +521,30 @@ main {
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
+
+.toastify {
+    z-index: 10000 !important;
+    position: relative;
+    height: 30px;
+    width: 160px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    font-style: var(--clr-gray);
+}
+
 body{
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 10px;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
   background: #1d1d1d;
+  flex-direction: column;
 }
 .container{
+  border-radius: 0.5rem;
   max-width: 800px;
   background: #fff;
   width: 800px;
@@ -523,7 +555,6 @@ body{
   text-align: center;
   font-size: 41px;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
   background: #3d4051;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -536,6 +567,7 @@ body{
   margin: 32px 0;
 }
 form .form-row .input-data{
+  border-radius: 0.5rem;
   width: 100%;
   height: 40px;
   margin: 0 20px;
@@ -637,6 +669,7 @@ form .form-row .textarea{
   }
   form .form-row .input-data{
     margin: 35px 0!important;
+    border-radius: 0.5rem;
   }
   .submit-btn .input-data{
     width: 40%!important;

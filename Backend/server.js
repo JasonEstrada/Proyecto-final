@@ -199,6 +199,53 @@ app.post('/actualizar-cliente', (req, res) => {
   });
 });
 
+app.get('/productos/:id', (req, res) => {
+    const idProducto = req.params.id;
+    connection.query('SELECT * FROM PRODUCTOS WHERE id_producto = ?', [idProducto], (error, results) => {
+        if (error) {
+            console.error('Error al obtener los detalles del producto:', error);
+            res.status(500).json({ error: 'Error al obtener los detalles del producto' });
+        } else {
+            res.json(results[0]);
+        }
+    });
+});
+
+app.post('/resenas', (req, res) => {
+    const { id_producto, id_cliente, calificacion, comentario } = req.body;
+    const fecha_resena = new Date().toISOString().slice(0, 10);  // Formatear fecha para MySQL (YYYY-MM-DD)
+
+    const query = "INSERT INTO RESENAS (id_producto, id_cliente, calificacion, comentario, fecha_resena) VALUES (?, ?, ?, ?, ?)";
+    connection.query(query, [id_producto, id_cliente, calificacion, comentario, fecha_resena], (error, results) => {
+        if (error) {
+            console.error('Error al insertar la reseña:', error);
+            res.status(500).json({ success: false, message: 'Error al insertar la reseña' });
+            return;
+        }
+
+        res.status(200).json({ success: true });
+    });
+});
+
+
+app.get('/resenas/:id_producto', (req, res) => {
+    const id_producto = req.params.id_producto;
+
+    const query = "SELECT R.calificacion, R.comentario, C.desc_cliente, DATE(R.fecha_resena) fecha_resena FROM RESENAS R JOIN CLIENTES C ON R.id_cliente = C.id_cliente WHERE R.id_producto = ?";
+    connection.query(query, [id_producto], (error, results) => {
+        if (error) {
+            console.error('Error al obtener las reseñas:', error);
+            res.status(500).json({ success: false, message: 'Error al obtener las reseñas' });
+            return;
+        }
+
+        res.status(200).json({ success: true, resenas: results });
+    });
+});
+
+
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
