@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Servir archivos estáticos desde el directorio 'Frontend'
-app.use(express.static(path.join(__dirname, '../Frontend')));
+app.use(express.static(path.join(__dirname, '../Frontend/base')));
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -228,12 +228,12 @@ app.get('/resenas/:id_producto', (req, res) => {
 
 // Añadir una ruta para manejar la raíz
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Frontend/index.html'));
+  res.sendFile(path.join(__dirname, '../Frontend/base/index.html'));
 });
 
 // Ruta para manejar cualquier otra solicitud que no coincida con las anteriores
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Frontend/index.html'));
+  res.sendFile(path.join(__dirname, '../Frontend/base/index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
