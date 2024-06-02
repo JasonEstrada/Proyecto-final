@@ -2,10 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Servir archivos estáticos desde el directorio 'Frontend'
+app.use(express.static(path.join(__dirname, '../Frontend')));
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
