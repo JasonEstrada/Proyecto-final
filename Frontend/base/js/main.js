@@ -35,7 +35,7 @@ function cargarProductos(productosElegidos) {
     });
 
     actualizarBotonesAgregar();
-    agregarEventosClickImagen();  // Añade esta línea
+    agregarEventosClickImagen(); 
 }
 
 function agregarEventosClickImagen() {
