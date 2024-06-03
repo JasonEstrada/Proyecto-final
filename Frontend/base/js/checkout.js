@@ -29,7 +29,7 @@ document.getElementById('checkout-form').addEventListener('submit', function(eve
     console.log(orden);
 
     // Enviar la orden al servidor
-    fetch('http://127.0.0.1:3000/crear-orden', {
+    fetch(`${config.apiBaseUrl}/crear-orden`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

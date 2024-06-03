@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             direccion: direccionInput.value
         };
 
-        fetch('http://127.0.0.1:3000/actualizar-cliente', {
+        fetch(`${config.apiBaseUrl}/actualizar-cliente`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

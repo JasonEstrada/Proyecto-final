@@ -1,13 +1,12 @@
 let calificacion = 0;
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const params = new URLSearchParams(window.location.search);
     const idProducto = params.get('id');
     const dataCliente = JSON.parse(localStorage.getItem("data_cliente"));
 
     if (idProducto) {
-        fetch(`http://127.0.0.1:3000/productos/${idProducto}`)
+        fetch(`${config.apiBaseUrl}/productos/${idProducto}`)
             .then(response => response.json())
             .then(producto => {
                 document.getElementById('detalle-imagen').src = producto.imagen;
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
 
             // Enviar la reseña al servidor
-            fetch('http://127.0.0.1:3000/resenas', {
+            fetch(`${config.apiBaseUrl}/resenas`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -106,24 +105,17 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
         });
-
-
     });
-
-    
 
     // Función para resetear las estrellas eliminando las clases 'hover' y 'selected'
     function resetearEstrellas() {
         estrellas.forEach(e => e.classList.remove('hover'));
-        //estrellas.forEach(e => e.classList.remove('selected'));
     }
     function resetearEstrellasSubmit() {
         estrellas.forEach(e => e.classList.remove('hover'));
         estrellas.forEach(e => e.classList.remove('selected'));
     }
 });
-
-
 
 function agregarAlCarrito(producto) {
     let productosEnCarrito = JSON.parse(localStorage.getItem("productos-en-carrito")) || [];
@@ -152,7 +144,7 @@ function mostrarMensajeProductoAgregado() {
 }
 
 function cargarResenas(idProducto) {
-    fetch(`http://127.0.0.1:3000/resenas/${idProducto}`)
+    fetch(`${config.apiBaseUrl}/resenas/${idProducto}`)
         .then(response => response.json())
         .then(data => {
             if (data.success) {

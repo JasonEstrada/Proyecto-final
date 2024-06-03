@@ -8,64 +8,62 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/banner.css">
-    <!-- Incluye este script en la sección <head> de tus páginas -->
-   
-
 </head>
 <body>
+    <!-- Incluir el banner -->
+    <div id="banner-container"></div>
 
-   <!-- Incluir el banner -->
-   <div id="banner-container"></div>
-
-   <div class="container">
-      <div class="text">
-         Actualiza tu información
-      </div>
-      <div id="mensaje" class="mensaje"></div> <!-- Aquí se mostrará el mensaje -->
-      <form action="#">
-         <div class="form-row">
-            <div class="input-data">
-               <input id="nombre" type="text" required="">
-               <div class="underline"></div>
-               <label for="">Nombre</label>
+    <div class="container">
+        <div class="text">
+            Actualiza tu información
+        </div>
+        <div id="mensaje" class="mensaje"></div> <!-- Aquí se mostrará el mensaje -->
+        <form action="#">
+            <div class="form-row">
+                <div class="input-data">
+                    <input id="nombre" type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Nombre</label>
+                </div>
+                <div class="input-data">
+                    <input id="email" type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Email</label>
+                </div>
             </div>
-            <div class="input-data">
-               <input id="email" type="text" required="">
-               <div class="underline"></div>
-               <label for="">Email</label>
+            <div class="form-row">
+                <div class="input-data">
+                    <input id="ciudad" type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Ciudad</label>
+                </div>
+                <div class="input-data">
+                    <input id="pais" type="text" required>
+                    <div class="underline"></div>
+                    <label for="">País</label>
+                </div>
             </div>
-         </div>
-         <div class="form-row">
-            <div class="input-data">
-               <input id="ciudad" type="text" required="">
-               <div class="underline"></div>
-               <label for="">Ciudad</label>
+            <div class="form-row">
+                <div class="input-data">
+                    <input id="direccion" type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Dirección</label>
+                </div>
+                <div class="input-data">
+                    <input id="telefono" type="text" required>
+                    <div class="underline"></div>
+                    <label for="">Teléfono</label>
+                </div>
             </div>
-            <div class="input-data">
-               <input id="pais" type="text" required="">
-               <div class="underline"></div>
-               <label for="">País</label>
+            <div class="form-row submit-btn">
+                <div class="input-data">
+                    <div class="inner"></div>
+                    <input type="submit" value="Actualizar">
+                </div>
             </div>
-            
-         </div>
-         <div class="form-row">
-            <div class="input-data">
-               <input id="direccion" type="text" required="">
-               <div class="underline"></div>
-               <label for="">Dirección</label>
-            </div>
-            
-            <div class="input-data">
-             <input id="telefono" type="text" required="">
-             <div class="underline"></div>
-             <label for="">Teléfono</label>
-          </div>
-         </div><div class="form-row submit-btn">
-               <div class="input-data">
-                  <div class="inner"></div>
-                  <input type="submit" value="Actualizar">
-
-               </div>
+        </form>
+    </div>
+    <script src="./js/config.js"></script>
     <script src="./js/actualizar_cliente.js"></script>
     <script src="./js/banner.js"></script>
 </body>

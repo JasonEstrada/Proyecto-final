@@ -1,12 +1,11 @@
 let productos = [];
 
-fetch("http://127.0.0.1:3000/productos")
+fetch(`${config.apiBaseUrl}/productos`)
     .then(response => response.json())
     .then(data => {
         productos = data;
         cargarProductos(productos);
-    })
-
+    });
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
@@ -16,7 +15,7 @@ const numerito = document.querySelector("#numerito");
 
 botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
     aside.classList.remove("aside-visible");
-}))
+}));
 
 function cargarProductos(productosElegidos) {
     contenedorProductos.innerHTML = "";
@@ -54,7 +53,7 @@ botonesCategorias.forEach(boton => {
         botonesCategorias.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
-        if (e.currentTarget.id != "todos") {
+        if (e.currentTarget.id !== "todos") {
             const productoCategoria = productos.find(producto => producto.categoria === e.currentTarget.id);
             tituloPrincipal.innerText = productoCategoria.categoria;
             const productosBoton = productos.filter(producto => producto.categoria === e.currentTarget.id);
@@ -63,7 +62,7 @@ botonesCategorias.forEach(boton => {
             tituloPrincipal.innerText = "Todos los productos";
             cargarProductos(productos);
         }
-    })
+    });
 });
 
 function actualizarBotonesAgregar() {
@@ -86,12 +85,9 @@ if (productosEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
-
-    // Mostrar el mensaje de "producto agregado"
     const mensajeProductoAgregado = document.getElementById("producto-agregado");
     mensajeProductoAgregado.style.display = "block";
 
-    // Ocultar el mensaje después de 3 segundos
     setTimeout(() => {
         mensajeProductoAgregado.style.display = "none";
     }, 3000);
