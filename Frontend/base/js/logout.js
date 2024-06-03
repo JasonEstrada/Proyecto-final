@@ -5,5 +5,5 @@ document.getElementById('btn-cerrar-sesion').addEventListener('click', function(
     localStorage.removeItem('productos-en-carrito');
 
     // Redirigir al usuario a la página de inicio de sesión
-    window.location.href = '../login.html';
+    window.location.href = './login.html';
 });

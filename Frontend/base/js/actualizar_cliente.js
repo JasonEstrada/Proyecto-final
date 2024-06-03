@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!dataCliente) {
         alert("Por favor, inicia sesión primero.");
-        window.location.href = '../login.html'; // Redirigir a la página de inicio de sesión
+        window.location.href = './login.html'; // Redirigir a la página de inicio de sesión
         return;
     }
 

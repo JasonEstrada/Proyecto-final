@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("logout").addEventListener("click", function() {
             localStorage.removeItem("data_cliente");
             localStorage.removeItem("productos-en-carrito");
-            window.location.href = "../login.html";
+            window.location.href = "./login.html";
         });
     } else {
         userInfo.innerHTML = `
-            <a href="../login.html">Iniciar sesión</a> 
-            <a href="../register.html">Registrarse</a>
+            <a href="./login.html">Iniciar sesión</a> 
+            <a href="./register.html">Registrarse</a>
         `;
     }
 });

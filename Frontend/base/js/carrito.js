@@ -127,5 +127,10 @@ function actualizarTotal() {
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
+    if (!dataCliente) {
+        alert("Por favor, inicia sesión primero.");
+        window.location.href = './login.html'; // Redirigir a la página de inicio de sesión
+        return;
+    }
     window.location.href = "./checkout.html";
 }

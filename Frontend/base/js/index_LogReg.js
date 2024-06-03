@@ -38,7 +38,7 @@ async function login() {
             localStorage.setItem('data_cliente', JSON.stringify(JSON.parse(data)));
             console.log(JSON.parse(localStorage.getItem('data_cliente')))
             localStorage.setItem('id_cliente', JSON.stringify(JSON.parse(data).id_cliente));
-            window.location.href="base/index.html";
+            window.location.href="index.html";
         }
 
         // Imprimir la respuesta del servidor en la consola

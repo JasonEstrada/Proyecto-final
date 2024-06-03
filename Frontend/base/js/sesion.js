@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
         btnCerrarSesion.addEventListener("click", function() {
             localStorage.removeItem("data_cliente");
             localStorage.removeItem("productos-en-carrito");
-            window.location.href = "../login.html";
+            window.location.href = "./login.html";
         });
     } else {
         sesionTexto.textContent = "Iniciar sesión";
         btnCerrarSesion.addEventListener("click", function() {
-            window.location.href = "../login.html";
+            window.location.href = "./login.html";
         });
     }
 });
