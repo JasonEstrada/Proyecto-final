@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/006012d854.js" crossorigin="anonymous"></script>
@@ -8,16 +7,15 @@
     <link rel="stylesheet" href="./css/FrontLogin.css">
     <title>TuTienda | Login</title>
 </head>
-
 <body>
     <section>
         <div class="contenedor">
             <div class="formulario">
-                <form id= logUser action="#">
+                <form id="logUser" action="#">
                     <h2>Iniciar Sesión</h2>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="user" id ="userid" required>
+                        <input type="text" id="userid" required>
                         <label for="#">Usuario</label>
                     </div>
                     <div class="input-contenedor">
@@ -27,22 +25,16 @@
                     </div>
                 </form>
                 <div class="invalido">
-                    <label for="#" id="invalido">
-                        
-                    </label>
+                    <label for="#" id="invalido"></label>
                 </div>
-                <button type="button" onclick="login()">Acceder</button>
+                <button type="button" onclick="login(event)">Acceder</button>
                 <div class="registrar">
-                    <p>¿No tienes una cuenta? <a href="register.html">¡Registrate!</a></p>
+                    <p>¿No tienes una cuenta? <a href="register.html">¡Regístrate!</a></p>
                 </div>
             </div>
-
         </div>
-
     </section>
-
+    <script src="./js/config.js"></script>
+    <script src="./js/index_LogReg.js"></script>
 </body>
-
-<script src=".\js\index_LogReg.js"></script>
-
 </html>

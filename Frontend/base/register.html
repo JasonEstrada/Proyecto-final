@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/006012d854.js" crossorigin="anonymous"></script>
@@ -8,10 +7,8 @@
     <link rel="stylesheet" href="./css/FrontRegister.css">
     <title>TuTienda | Register</title>
 </head>
-
 <body>
     <section>
-        
         <div class="contenedor">
             <div class="formulario">
                 <div class="back">
@@ -19,54 +16,49 @@
                 </div>
                 <h2>Regístrate</h2>
                 <h4>¡Bienvenido!</h4>
-                <form id=regUser action="#">
+                <form id="regUser" action="#">
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="name1id" required>
+                        <input type="text" id="name1id" required>
                         <label for="#">Nombre</label>
                     </div>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="surname1id" required>
+                        <input type="text" id="surname1id" required>
                         <label for="#">Apellidos</label>
                     </div>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="correoid" required>
+                        <input type="email" id="correoid" required>
                         <label for="#">Correo</label>
                     </div>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="telefonoid" required>
-                        <label for="#">Telefono</label>
+                        <input type="tel" id="telefonoid" required>
+                        <label for="#">Teléfono</label>
                     </div>
                 </form>
             </div>
-
-        </div>
-
-        <div class="contenedor">
             <div class="formulario">
-                <form id=regUser2 action="#">
-                    
+                <form id="regUser2" action="#">
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="direccionid" required>
+                        <input type="text" id="direccionid" required>
                         <label for="#">Dirección</label>
                     </div>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="ciudadid" required>
+                        <input type="text" id="ciudadid" required>
                         <label for="#">Ciudad</label>
                     </div>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="name" id="paisid" required>
+                        <input type="text" id="paisid" required>
                         <label for="#">País</label>
                     </div>
                     <div class="input-contenedor">
                         <i class="fa-solid fa-user"></i>
-                        <input type="user" id="userid" required>
+                        <input type="text" id="userid" required>
                         <label for="#">Usuario</label>
                     </div>
                     <div class="input-contenedor">
@@ -76,17 +68,13 @@
                     </div>
                 </form>
                 <div class="invalido">
-                    <label for="#" id="invalido">
-                        
-                    </label>
+                    <label for="#" id="invalido"></label>
                 </div>
                 <button type="button" onclick="register()">Ingresar</button>
             </div>
-
         </div>
     </section>
+    <script src="./js/config.js"></script>
+    <script src="./js/index_LogReg.js"></script>
 </body>
-
-<script src=".\js\index_LogReg.js"></script>
-
 </html>
