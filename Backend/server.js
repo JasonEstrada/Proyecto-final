@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Servir archivos estáticos desde el directorio 'Frontend'
-app.use(express.static(path.join(__dirname, '../Frontend/base')));
+app.use(express.static(path.join(__dirname, '../Frontend')));
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
