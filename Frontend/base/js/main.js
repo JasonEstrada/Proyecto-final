@@ -1,11 +1,11 @@
 let productos = [];
 
-fetch(`${config.apiBaseUrl}/productos`)
+fetch(`https://tutienda-worg.onrender.com/productos`)
     .then(response => response.json())
     .then(data => {
         productos = data;
         cargarProductos(productos);
-    });
+    }); 
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
